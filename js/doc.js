@@ -1,13 +1,13 @@
 import { apiKey } from './../.env';
 export class Doc {
   constructor() {
-    this.state = 'OR';
+    this.state = 'or-portland';
     this.search = 'obgyn';
 
   }
-  getPracticeDoc() {
+  getPracticeDoc(userSearch) {
     $.ajax({
-      url: `https://api.betterdoctor.com/2016-03-01/practices?name=${this.search}&location=${this.state}&skip=0&limit=10&user_key=${apiKey}`,
+      url: `https://api.betterdoctor.com/2016-03-01/practices?name=${userSearch}&location=${this.state}&skip=0&limit=10&user_key=${apiKey}`,
       type: 'GET',
       data: {
         format: 'json'
