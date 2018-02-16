@@ -1,0 +1,29 @@
+.container {
+  width: 1000px;
+}
+.card {
+  float: left;
+  margin: 0 15px 15px 0;
+}
+.card-img-top {
+  width: 110px;
+}
+.mr-3 {
+  width: 110px;
+}
+.btn-primary {
+  background-color: #F2385A;
+  border: #F2385A;
+}
+.btn-primary:hover {
+  background-color: #FF3B5F;
+}
+
+.accepts {
+  font-size: 12px;
+  margin: 0px 0px 10px;
+}
+.address {
+  font-size: 12px;
+  margin: 0px;
+}
