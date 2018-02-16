@@ -24,15 +24,13 @@ export class Doc {
               $('#docs').append(`
               <div class="card">
                 <div class="card-body">
-                  <div class="row">
-                    <div class="col col-md-3">
-                        <img class="card-img-top" src="${data[i].doctors[k].profile.image_url}" alt="Card image cap">
+                <div class="media">
+                  <img class="mr-3" src="${data[i].doctors[k].profile.image_url}" alt="Card image cap">
+                  <div class="media-body">
+                      <h5 class="card-title">${data[i].doctors[k].profile.first_name} ${data[i].doctors[k].profile.last_name}</h5>
+                      <p class="accepts">Accepting Patients: <span class="badge badge-success">${data[i].accepts_new_patients}</span></p>
+                      <p class="address">Address: <br>${data[i].visit_address.street}<br>${data[i].visit_address.zip} ${data[i].visit_address.city}, ${data[i].visit_address.state}</p>
                     </div>
-                    <div class="col col-md-9">
-                        <h5 class="card-title">${data[i].doctors[k].profile.first_name} ${data[i].doctors[k].profile.last_name}</h5>
-                        <p class="accepts">Accepting Patients: <span class="badge badge-success">${data[i].accepts_new_patients}</span></p>
-                        <p class="address">Address: <br>${data[i].visit_address.street}<br>${data[i].visit_address.zip} ${data[i].visit_address.city}, ${data[i].visit_address.state}</p>
-                      </div>
                   </div>
                   <p class="card-text">${data[i].doctors[k].profile.bio}</p>
                 </div>
