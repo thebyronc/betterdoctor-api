@@ -19,7 +19,7 @@ export class Doc {
         for(let i = 0; i < data.length; i++) {
           if(data[i].accepts_new_patients == true) {
             for(let k = 0; k < data[i].doctors.length; k++) {
-              $('#symptoms').append(`<option value="">${data[i].doctors[k].profile.first_name} ${data[i].doctors[k].profile.last_name}</option>`);
+              $('#docs').append(`<option value="">${data[i].doctors[k].profile.first_name} ${data[i].doctors[k].profile.last_name}</option>`);
             }
 
           }

@@ -9,29 +9,36 @@
 
   </head>
   <body>
-    <div class="container">
-      <form id="searchPractice">
-        <div class="form-group">
-          <label for="searchPractice">Medical Issue</label>
-          <input type="text" class="form-control" id="searchSpec" placeholder="Enter a medical issue">
-          <small class="form-text text-muted">Entering terms that best descript your issue will return with the best results.</small>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md">
+          <form id="searchPractice">
+            <div class="form-group">
+              <label for="searchPractice">Medical Issue</label>
+              <input type="text" class="form-control" id="searchSpec" placeholder="Enter a medical issue">
+              <small class="form-text text-muted">Entering terms that best descript your issue will return with the best results.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-      <form id="searchDoc">
-        <div class="form-group">
-          <label for="searchName">Doctor Search</label>
-          <input type="text" class="form-control" id="searchName" placeholder="Enter Name">
-          <small class="form-text text-muted">Search for doctor in area by name.</small>
+        <div class="col-md">
+          <form id="searchDoc">
+            <div class="form-group">
+              <label for="searchName">Doctor Search</label>
+              <input type="text" class="form-control" id="searchName" placeholder="Enter Name">
+              <small class="form-text text-muted">Search for doctor in area by name.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-      <div class="list">
-        <select id="symptoms">
-        </select>
-      </div>
-      <div id="docs">
-      </div>
+      </div> <!-- end row -->
+      <div class="row">
+        <div class="col" id="docs">
+
+
+        </div>
+      </div><!-- end row -->
+
     </div>
   </body>
 </html>
