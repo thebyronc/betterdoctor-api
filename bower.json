@@ -1,0 +1,21 @@
+{
+  "name": "betterdoctor",
+  "description": "Week 2 of JavaScript API project.",
+  "main": "index.js",
+  "authors": [
+    "Byron Chang"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.0.0"
+  }
+}

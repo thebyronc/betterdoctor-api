@@ -1,0 +1,44 @@
+{
+  "name": "betterdoctor",
+  "version": "1.0.0",
+  "description": "Week 2 of JavaScript API project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebyronc/betterdoctor-api.git"
+  },
+  "author": "Byron Chang",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "bower-files": "^4.0.0",
+    "browser-sync": "^2.23.6",
+    "browserify": "^15.2.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-uglify": "^3.0.0",
+    "jasmine": "^2.9.0",
+    "jasmine-core": "^2.99.0",
+    "jshint": "^2.9.5",
+    "karma": "^2.0.0",
+    "karma-browserify": "^5.1.3",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.1",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-jquery": "^0.2.2",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/thebyronc/betterdoctor-api/issues"
+  },
+  "homepage": "https://github.com/thebyronc/betterdoctor-api#readme"
+}
