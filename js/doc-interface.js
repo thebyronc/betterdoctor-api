@@ -7,6 +7,10 @@ $(document).ready(function(){
     let userSearch = $('#searchSpec').val();
     doc.getPracticeDoc(userSearch);
   });
-
+  $('#searchDoc').submit(function(event) {
+    event.preventDefault();
+    let userSearch = $('#searchName').val();
+    doc.getNameDoc(userSearch);
+  });
 
 });
