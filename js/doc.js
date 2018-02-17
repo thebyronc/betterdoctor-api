@@ -33,6 +33,7 @@ export class Doc {
                     </div>
                   </div>
                   <p class="card-text">${data[i].doctors[k].profile.bio}</p>
+                  <p class="card-text">Contact Number: ${data[i].phones[1].number}</p>
                 </div>
               </div>
               `);
@@ -59,6 +60,7 @@ export class Doc {
           console.log(status);
           $('#docs').empty();
           let data = response.data;
+          console.log(data);
           this.dataSize = data.length;
           if(data.length < 1) {
             $('#docs').html(`<h2>No Doctors for this search criteria in the Portland area was found</h2>`);
