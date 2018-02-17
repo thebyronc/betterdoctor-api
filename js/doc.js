@@ -2,8 +2,7 @@ import { apiKey } from './../.env';
 export class Doc {
   constructor() {
     this.state = 'or-portland';
-    this.search = 'obgyn';
-
+    this.dataSize;
   }
   getPracticeDoc(userSearch) {
     $.ajax({
@@ -15,9 +14,10 @@ export class Doc {
       success: function(response) {
         $('#docs').empty();
         let data = response.data;
+        this.dataSize = data.length;
         console.log(data);
         if(data.length < 1) {
-          $('#docs').html(`<h2>No Doctors for this search criteria in the Portland area found</h2>`);
+          $('#docs').html(`<h2>No Doctors for this search criteria in the Portland area was found</h2>`);
         } else {
           for(let i = 0; i < data.length; i++) {
             for(let k = 0; k < data[i].doctors.length; k++) {
@@ -59,10 +59,15 @@ export class Doc {
           console.log(status);
           $('#docs').empty();
           let data = response.data;
+          this.dataSize = data.length;
           if(data.length < 1) {
-            $('#docs').html(`<h2>No Doctors for this search criteria in the Portland area found</h2>`);
+            $('#docs').html(`<h2>No Doctors for this search criteria in the Portland area was found</h2>`);
           } else {
             for(let i = 0; i < data.length; i++) {
+              let website = "";
+              if(data[i].practices[0].website != undefined) {
+                website = `<a href="${data[i].practices[0].website}" target="_blank" class="btn btn-primary">${data[i].practices[0].website}</a>`;
+              } else {}
               $('#docs').append(`
                 <div class="card">
                   <div class="card-body">
@@ -75,7 +80,7 @@ export class Doc {
                       </div>
                     </div>
                     <p class="card-text">${data[i].profile.bio}</p>
-                    <a href="${data[i].practices[0].website}" target="_blank" class="btn btn-primary">${data[i].practices[0].website}</a>
+                    ${website}
                   </div>
                 </div>`);
             }
