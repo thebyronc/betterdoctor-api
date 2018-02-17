@@ -24,9 +24,9 @@ export class Doc {
               $('#docs').append(`
               <div class="card">
                 <div class="card-body">
-                <div class="media">
-                  <img class="mr-3" src="${data[i].doctors[k].profile.image_url}" alt="Card image cap">
-                  <div class="media-body">
+                  <div class="media">
+                    <img class="mr-3" src="${data[i].doctors[k].profile.image_url}" alt="Card image cap">
+                    <div class="media-body">
                       <h5 class="card-title">${data[i].doctors[k].profile.first_name} ${data[i].doctors[k].profile.last_name}</h5>
                       <p class="accepts">Accepting Patients: <span class="badge badge-success">${data[i].accepts_new_patients}</span></p>
                       <p class="address">Address: <br>${data[i].visit_address.street}<br>${data[i].visit_address.zip} ${data[i].visit_address.city}, ${data[i].visit_address.state}</p>
@@ -43,7 +43,7 @@ export class Doc {
 
         },
         error: function() {
-          $('#errors').text("There was an error retrieving symptoms. Please try again.");
+          $('#docs').text("There was an error retrieving information. Please try again.");
         }
       });
     }
@@ -57,30 +57,32 @@ export class Doc {
         },
         success: function(response, jqXHR, status) {
           console.log(status);
+          $('#docs').empty();
           let data = response.data;
-          for(let i = 0; i < data.length; i++) {
-            $('#docs').append(`
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col col-md-3">
-                        <img class="card-img-top" src="${data[i].profile.image_url}" alt="Card image cap">
-                    </div>
-                    <div class="col col-md-9">
+          if(data.length < 1) {
+            $('#docs').html(`<h2>No Doctors for this search criteria in the Portland area found</h2>`);
+          } else {
+            for(let i = 0; i < data.length; i++) {
+              $('#docs').append(`
+                <div class="card">
+                  <div class="card-body">
+                    <div class="media">
+                      <img class="mr-3" src="${data[i].profile.image_url}" alt="Card image cap">
+                      <div class="media-body">
                         <h5 class="card-title">${data[i].profile.first_name} ${data[i].profile.last_name}</h5>
                         <p class="accepts">Accepting Patients: <span class="badge badge-success">${data[i].practices[0].accepts_new_patients}</span></p>
                         <p class="address">Address: <br>${data[i].practices[0].visit_address.street}<br>${data[i].practices[0].visit_address.zip} ${data[i].practices[0].visit_address.city}, ${data[i].practices[0].visit_address.state}</p>
                       </div>
+                    </div>
+                    <p class="card-text">${data[i].profile.bio}</p>
+                    <a href="${data[i].practices[0].website}" target="_blank" class="btn btn-primary">${data[i].practices[0].website}</a>
                   </div>
-                  <p class="card-text">${data[i].profile.bio}</p>
-                  <a href="${data[i].practices[0].website}" target="_top" class="btn btn-primary">${data[i].practices[0].website}</a>
-                </div>
-              </div>`);
+                </div>`);
+            }
           }
-
-          },
+        },
           error: function() {
-            $('#errors').text("There was an error retrieving symptoms. Please try again.");
+            $('#docs').text("There was an error retrieving information. Please try again.");
           }
         });
       }
