@@ -16,6 +16,7 @@ $ git clone https://github.com/thebyronc/betterdoctor-api.git
 //go to root cloned folder
 $ npm install
 $ bower install
+$ gulp build
 $ gulp serve
 //Chrome should auto load the application at localhost
 ```
