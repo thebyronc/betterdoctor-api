@@ -10,10 +10,17 @@ Using the [BetterDoctor API](https://developer.betterdoctor.com/), you can enter
 - [Bower](https://bower.io/) - Frontend package manager
 
 ### Setup
+
+Before running, you will need an .env file with your apiKey from [BetterDoctor](https://developer.betterdoctor.com/)
+
+.env
+```
+exports.apiKey = "API_Key_Here";
+```
 In the terminal run these commands:
 ```
 $ git clone https://github.com/thebyronc/betterdoctor-api.git
-//go to root cloned folder
+//go to root cloned folder (place your .env key here)
 $ npm install
 $ bower install
 $ gulp build
